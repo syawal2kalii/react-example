@@ -1,9 +1,18 @@
 import React from 'react'
-
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useParams,
+    useRouteMatch
+  } from "react-router-dom";
+  
 export default function Header() {
     return (
         <div>
-            <h1>Header</h1>
+            <Link to="/">Beranda</Link>
+            <Link to="/product">Product</Link>
             
         </div>
     )
