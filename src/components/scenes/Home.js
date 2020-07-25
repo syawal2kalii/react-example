@@ -4,8 +4,8 @@ import Base from '../parts/Base'
 export default function Home() {
     return (
         <div>
-            
-                <h1>sdd</h1>
+        
+            <h1>Home</h1>
             
         </div>
     )
