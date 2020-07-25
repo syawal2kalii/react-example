@@ -5,50 +5,52 @@ import {
   Switch,
   Route,
   Link,
-  useParams,
   useRouteMatch,
 } from "react-router-dom";
-// import Detail from "../parts/Detail";
+import Detail from "../parts/Detail";
+// import ListProduct from "../parts/ListProducts";
+import DetailProduct from '../scenes/DetailProduct'
 
 export default function Product() {
   let { path, url } = useRouteMatch();
   return (
     <div>
-      <Router>
-        <h1>product</h1>
+     {/* harus tambah router di sini */}
         <ul>
-          <li>
-            <Link to={`${url}/product1`}>Product1</Link>
-          </li>
-          <li>
-          <Link to={`${url}/product2`}>Product2</Link>
-            
-          </li>
-          <li>
-          <Link to={`${url}/product3`}>Product3</Link>
-          </li>
-          <Switch>
-            <Route exact path={path}>
-              <h3>Please select a topic.</h3>
-            </Route>
-            <Route path={`${path}/:productId`}>
-              {/* <Detail/> */}
-              <Detail1></Detail1>
-              {/* <h1>dd</h1> */}
-            </Route>
-          </Switch>
+          <li><Link to="product/product1">Product1</Link></li>
+          <li><Link to="product/product2">Product2</Link></li>
+          <li><Link to="product/product3">Product3</Link></li>
         </ul>
-      </Router>
+        
+     
+      
+      {/* <Router>
+        <h1>product</h1>
+        
+          
+        <Switch> <h3>Please select a topic.</h3>
+          
+          <Route exact path={path} >
+          <ul>
+            <li>
+              <Link to={`${url}/product1`}>Product1</Link>
+            </li>
+            <li>
+              <Link to={`${url}/product2`}>Product2</Link>
+            </li>
+            <li>
+              <Link to={`${url}/product3`}>Product3</Link>
+            </li>
+          </ul>
+            <h3>Please select a topic.</h3>
+          </Route>
+          <Route path={`${path}/:productId`} component={Detail}>
+            
+          </Route>
+        </Switch>
+      </Router> */}
     </div>
   );
 }
 
-function Detail1() {
-  let { productId } = useParams();
 
-  return (
-    <div>
-      <h3>{productId}</h3>
-    </div>
-  );
-}

@@ -12,6 +12,7 @@ import Home from "./components/scenes/Home";
 import Product from "./components/scenes/Product";
 import Base from "./components/parts/Base";
 import Header from "./components/parts/Header";
+import DetailProduct from './components/scenes/DetailProduct'
 
 function App() {
   return (
@@ -19,12 +20,9 @@ function App() {
       <Router>
         <Base>
           <Switch>
-            <Route exact path="/">
-              <Home></Home>
-            </Route>
-            <Route path="/product">
-              <Product></Product>
-            </Route>
+            <Route exact path="/" component={Home}/>
+            <Route path="/product" component={Product}/>
+            <Route path="/product/:productId" component={DetailProduct}/>
           </Switch>
         </Base>
       </Router>
